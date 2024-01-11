@@ -54,7 +54,12 @@ public class AddProductController {
 
         if(bindingResult.hasErrors()){
             ProductService productService = context.getBean(ProductServiceImpl.class);
-            Product product2=productService.findById((int)product.getId());
+            Product product2 = new Product();
+            try {
+                product2 = productService.findById((int) product.getId());
+            } catch (Exception e) {
+                System.out.println("Error Message " + e.getMessage());
+            }
             theModel.addAttribute("parts", partService.findAll());
             List<Part>availParts=new ArrayList<>();
             for(Part p: partService.findAll()){
