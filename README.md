@@ -1,7 +1,7 @@
 ## D287 – JAVA FRAMEWORKS
 
 ### C.  Customize the HTML user interface for your customer’s application. The user interface should include the shop name, the product names, and the names of the parts.
-File Name: mainscreen.html 
+File Path: src/main/resources/templates/mainscreen.html
 
 Line Number: 14
 Changes: Changed Title to "Yip's Retro Games" 
@@ -28,9 +28,19 @@ Created the showAbout method which returns the view about.html.
 
 
 ### E.  Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.
+File Path: src/main/java/com/example/demo/domain/OutsourcedPart.java
+Lines: 20-22
+Added constructor to simplify future object instantiation.
 
+File Path: src/main/java/com/example/demo/domain/InhousePart.java
+Lines: 20-22
+Added constructor to simplify future object instantiation.
 
-Note: Make sure the sample inventory is added only when both the part and product lists are empty. When adding the sample inventory appropriate for the store, the inventory is stored in a set so duplicate items cannot be added to your products. When duplicate items are added, make a “multi-pack” part.
+File Path: src/main/java/com/example/demo/bootstrap/BootStrapData.java
+Lines 68-96: 
+Instantiated 5 Parts and 5 Products using both existing and newly added constructors. Utilized if/else statement to only
+add sample inventory when both the product and part lists are empty.
+
 
 
 ### F.  Add a “Buy Now” button to your product list. Your “Buy Now” button must meet each of the following parameters:
