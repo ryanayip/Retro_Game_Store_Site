@@ -15,10 +15,16 @@ Changes: Changed 1st h2 to "Custom Parts"
 Line Number: 53
 Changes: Changed 2nd h2 to "Consoles"
 
-Note: Do not remove any elements that were included in the screen. You may add any additional elements you would like or any images, colors, and styles, although it is not required.
 
 
- ### D.  Add an “About” page to the application to describe your chosen customer’s company to web viewers and include navigation to and from the “About” page and the main screen.
+### D.  Add an “About” page to the application to describe your chosen customer’s company to web viewers and include navigation to and from the “About” page and the main screen.
+
+Added the view for the about page under src/main/resources/templates/about.html. Used the same bootstrap styling as the other pages.
+
+Added a Controller under src/main/java/com/example/demo/controllers/AboutController.java 
+Used the annotation @GetMapping to map the method "showAbout" to handle GET requests for the endpoint "/showAbout"
+
+Created the showAbout method which returns the view about.html.
 
 
 ### E.  Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.
