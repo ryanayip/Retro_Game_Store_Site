@@ -48,6 +48,23 @@ add sample inventory when both the product and part lists are empty.
 •  The button should decrement the inventory of that product by one. It should not affect the inventory of any of the associated parts.
 •  Display a message that indicates the success or failure of a purchase.
 
+File Path: src/main/java/com/example/demo/controllers/AddProductController.java
+Lines: 174-189:
+Added the buyProduct method. If the inventory of the item is > 0, decerements the inventory by 1 and redirects to 
+confirmationbuyproduct.html, otherwise, redirects to failedbuyproduct.html.
+
+File Path: src/main/resources/templates/mainscreen.html
+Lines:89-92
+Added the button that calls the buyProduct method. Used a form instead of a standard button 
+to utilize the POST request instead of the default GET request.
+
+File Path: src/main/resources/templates/confirmationbuyproduct.html
+Simple view with a success message.
+
+File Path: src/main/resources/templates/failedbuyproduct.html
+Simple view with a failure message.
+
+
 
 ### G.  Modify the parts to track maximum and minimum inventory by doing the following:
 •  Add additional fields to the part entity for maximum and minimum inventory.
