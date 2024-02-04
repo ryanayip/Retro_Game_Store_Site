@@ -55,6 +55,8 @@ public class BootStrapData implements CommandLineRunner {
             gbcIPSDisplay.setInv(50);
             gbcIPSDisplay.setPrice(30.0);
             gbcIPSDisplay.setId(100L);
+            gbcIPSDisplay.setMinValue(5);
+            gbcIPSDisplay.setMaxValue(500);
             outsourcedPartRepository.save(gbcIPSDisplay);
 
             OutsourcedPart ledButtons = new OutsourcedPart();
@@ -63,6 +65,8 @@ public class BootStrapData implements CommandLineRunner {
             ledButtons.setInv(20);
             ledButtons.setPrice(500.0);
             ledButtons.setId(200L);
+            ledButtons.setMinValue(5);
+            ledButtons.setMaxValue(300);
             outsourcedPartRepository.save(ledButtons);
 
             InhousePart gbaShell = new InhousePart();
@@ -70,6 +74,8 @@ public class BootStrapData implements CommandLineRunner {
             gbaShell.setInv(50);
             gbaShell.setPrice(60.0);
             gbaShell.setId(300L);
+            gbaShell.setMinValue(5);
+            gbaShell.setMaxValue(500);
             partRepository.save(gbaShell);
 
             InhousePart gbcShell = new InhousePart();
@@ -77,6 +83,8 @@ public class BootStrapData implements CommandLineRunner {
             gbcShell.setInv(30);
             gbcShell.setPrice(45.0);
             gbcShell.setId(400L);
+            gbcShell.setMinValue(3);
+            gbcShell.setMaxValue(400);
             partRepository.save(gbcShell);
 
             InhousePart usbcCharger = new InhousePart();
@@ -84,13 +92,14 @@ public class BootStrapData implements CommandLineRunner {
             usbcCharger.setInv(20);
             usbcCharger.setPrice(20.0);
             usbcCharger.setId(500L);
+            usbcCharger.setMinValue(5);
+            usbcCharger.setMaxValue(300);
             partRepository.save(usbcCharger);
 
             List<OutsourcedPart> outsourcedParts = (List<OutsourcedPart>) outsourcedPartRepository.findAll();
             for (OutsourcedPart part : outsourcedParts) {
                 System.out.println(part.getName() + " " + part.getCompanyName());
             }
-
 
 
             //5 Products instantiated using constructors

@@ -40,7 +40,7 @@ Lines: 20-22
 Added constructor to simplify future object instantiation.
 
 File Path: src/main/java/com/example/demo/bootstrap/BootStrapData.java
-Lines 48-115:
+Lines 48-108:
 Instantiated 5 Parts and 5 Products using both existing constructors and setter methods. Utilized if/else statement to only
 add sample inventory when both the product and part lists are empty.
 
@@ -75,6 +75,42 @@ Simple view with a failure message.
 •  Add to the InhousePartForm and OutsourcedPartForm forms additional text inputs for the inventory so the user can set the maximum and minimum values.
 •  Rename the file the persistent storage is saved to.
 •  Modify the code to enforce that the inventory is between or at the minimum and maximum value.
+
+File Path: src/main/java/com/example/demo/domain/Part.java
+Lines: 28-35
+Instantiated two new variables for the min and max value
+
+File Path: src/main/java/com/example/demo/domain/Part.java
+Lines: 98-113
+Added getters and setters for new variables.
+
+File Path: src/main/java/com/example/demo/bootstrap/BootStrapData.java
+Lines: 58,59,68,69,77,78,86,87,95,96
+Instantiated sample inventory parts with min and max values
+
+File Path: src/main/resources/templates/InhousePartForm.html
+Lines: 25-32
+Added additional text inputs for the inventory so the user can set the maximum and minimum values.
+
+File Path:src/main/resources/templates/OutsourcedPartForm.html
+Lines: 24-30
+Added additional text inputs for the inventory so the user can set the maximum and minimum values.
+
+File Path: src/main/resources/application.properties
+Line: 7
+Renamed database file to yip-retro-games.db
+
+File Path: src/main/java/com/example/demo/domain/Part.java
+Lines: 115-118
+Added method isValidInvAmount to check that the inventory is within min/max bounds.
+
+File Path: src/main/java/com/example/demo/controllers/AddInhousePartController.java
+Lines: 40-43
+Added check to ensure inventory amount is within the min/max bounds utilizing the isValidInvAmount method
+
+File Path: src/main/java/com/example/demo/controllers/AddOutsourcedPartController.java
+Lines: 44-47
+Added check to ensure inventory amount is within the min/max bounds utilizing the isValidInvAmount method
 
 
 ### H.  Add validation for between or at the maximum and minimum fields. The validation must include the following:
