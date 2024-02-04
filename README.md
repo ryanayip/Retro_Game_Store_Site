@@ -140,3 +140,6 @@ Lines: 132-153
 Added two tests for the minimum and maximum values for the inhouse and outsourced parts.
 
 ### J.  Remove the class files for any unused validators in order to clean your code.
+File Path: src/main/java/com/example/demo/validators/DeletePartValidator.java
+Lines: All
+Deleted the DeletePartValidator which has 0 usages.
