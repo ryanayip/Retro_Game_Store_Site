@@ -18,13 +18,16 @@ Changes: Changed 2nd h2 to "Consoles"
 
 
 ### D.  Add an “About” page to the application to describe your chosen customer’s company to web viewers and include navigation to and from the “About” page and the main screen.
+File Path: src/main/resources/templates/about.html
+Lines: All
+Added the view for the about page. Used the same bootstrap styling as the other pages.
 
-Added the view for the about page under src/main/resources/templates/about.html. Used the same bootstrap styling as the other pages.
+File Path: src/main/java/com/example/demo/controllers/AboutController.java 
+Lines: All
+Created the showAbout method which returns the view about.html. Used the annotation @GetMapping to map the method 
+"showAbout" to handle GET requests for the endpoint "/showAbout"
 
-Added a Controller under src/main/java/com/example/demo/controllers/AboutController.java 
-Used the annotation @GetMapping to map the method "showAbout" to handle GET requests for the endpoint "/showAbout"
 
-Created the showAbout method which returns the view about.html.
 
 
 ### E.  Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.
@@ -50,7 +53,7 @@ add sample inventory when both the product and part lists are empty.
 
 File Path: src/main/java/com/example/demo/controllers/AddProductController.java
 Lines: 174-189:
-Added the buyProduct method. If the inventory of the item is > 0, decerements the inventory by 1 and redirects to 
+Added the buyProduct method. If the inventory of the item is > 0, decrements the inventory by 1 and redirects to 
 confirmationbuyproduct.html, otherwise, redirects to failedbuyproduct.html.
 
 File Path: src/main/resources/templates/mainscreen.html
