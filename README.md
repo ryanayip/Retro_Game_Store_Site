@@ -4,16 +4,16 @@
 File Path: src/main/resources/templates/mainscreen.html
 
 Line Number: 14
-Changes: Changed Title to "Yip's Retro Games" 
+Changed Title to "Yip's Retro Games" 
 
 Line Number: 19
-Changes: Changed h1 to "Yip's Retro Games"
+Changed h1 to "Yip's Retro Games"
 
 Line Number: 21 
-Changes: Changed 1st h2 to "Custom Parts"
+Changed 1st h2 to "Custom Parts"
 
 Line Number: 53
-Changes: Changed 2nd h2 to "Consoles"
+Changed 2nd h2 to "Consoles"
 
 
 
@@ -117,6 +117,21 @@ Added check to ensure inventory amount is within the min/max bounds utilizing th
 •  Display error messages for low inventory when adding and updating parts if the inventory is less than the minimum number of parts.
 •  Display error messages for low inventory when adding and updating products lowers the part inventory below the minimum.
 •  Display error messages when adding and updating parts if the inventory is greater than the maximum.
+
+File Path: src/main/java/com/example/demo/controllers/AddInhousePartController.java
+Lines: 40-49
+Added two additional if statements that return a different error message depending on if the inventory amount is greater
+than the maximum amount or less than the minimum amount.
+
+File Path: src/main/java/com/example/demo/controllers/AddOutsourcedPartController.java
+Lines: 44-53
+Added two additional if statements that return a different error message depending on if the inventory amount is greater
+than the maximum amount or less than the minimum amount.
+
+File Path: src/main/java/com/example/demo/validators/EnufPartsValidator.java
+Lines: 36-38
+Added a validator that utilizes the isValidInvAmount method to check if adding and updating products lowers the
+part inventory below the minimum.
 
 
 ### I.  Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.
