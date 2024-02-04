@@ -135,6 +135,8 @@ part inventory below the minimum.
 
 
 ### I.  Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.
-
+File Path: src/test/java/com/example/demo/domain/PartTest.java
+Lines: 132-153
+Added two tests for the minimum and maximum values for the inhouse and outsourced parts.
 
 ### J.  Remove the class files for any unused validators in order to clean your code.
