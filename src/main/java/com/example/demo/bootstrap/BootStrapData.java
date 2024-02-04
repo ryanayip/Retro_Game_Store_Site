@@ -37,26 +37,6 @@ public class BootStrapData implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-       /*
-        OutsourcedPart o= new OutsourcedPart();
-        o.setCompanyName("Western Governors University");
-        o.setName("out test");
-        o.setInv(5);
-        o.setPrice(20.0);
-        o.setId(100L);
-        outsourcedPartRepository.save(o);
-        OutsourcedPart thePart=null;
-        List<OutsourcedPart> outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();
-        for(OutsourcedPart part:outsourcedParts){
-            if(part.getName().equals("out test"))thePart=part;
-        }
-
-        System.out.println(thePart.getCompanyName());
-        */
-        List<OutsourcedPart> outsourcedParts = (List<OutsourcedPart>) outsourcedPartRepository.findAll();
-        for (OutsourcedPart part : outsourcedParts) {
-            System.out.println(part.getName() + " " + part.getCompanyName());
-        }
 
         /*
         Product bicycle= new Product("bicycle",100.0,15);
@@ -67,17 +47,50 @@ public class BootStrapData implements CommandLineRunner {
 
         if (partRepository.count() == 0 && outsourcedPartRepository.count() == 0 && productRepository.count() == 0) {
 
-            //5 Parts instantiated using newly added constructors.
-            OutsourcedPart gbcIPSDisplay = new OutsourcedPart("Game Boy Color IPS Display", 50, 30);
-            OutsourcedPart ledButtons = new OutsourcedPart("LED Buttons", 20, 500);
-            InhousePart gbaShell = new InhousePart("Game Boy Advance Premium Shell", 30, 45);
-            InhousePart gbcShell = new InhousePart("Game Boy Color Premium Shell", 30, 60);
-            InhousePart usbcCharger = new InhousePart("USB-C Charger Upgrade", 20, 15);
-            partRepository.save(gbcIPSDisplay);
-            partRepository.save(ledButtons);
+
+            //NEW FIX: 5 Parts instantiated manually
+            OutsourcedPart gbcIPSDisplay = new OutsourcedPart();
+            gbcIPSDisplay.setCompanyName("Western Governors University");
+            gbcIPSDisplay.setName("Game Boy Color IPS Display");
+            gbcIPSDisplay.setInv(50);
+            gbcIPSDisplay.setPrice(30.0);
+            gbcIPSDisplay.setId(100L);
+            outsourcedPartRepository.save(gbcIPSDisplay);
+
+            OutsourcedPart ledButtons = new OutsourcedPart();
+            ledButtons.setCompanyName("Western Governors University");
+            ledButtons.setName("LED Buttons");
+            ledButtons.setInv(20);
+            ledButtons.setPrice(500.0);
+            ledButtons.setId(200L);
+            outsourcedPartRepository.save(ledButtons);
+
+            InhousePart gbaShell = new InhousePart();
+            gbaShell.setName("GBA Shell");
+            gbaShell.setInv(50);
+            gbaShell.setPrice(60.0);
+            gbaShell.setId(300L);
             partRepository.save(gbaShell);
+
+            InhousePart gbcShell = new InhousePart();
+            gbcShell.setName("GBC Shell");
+            gbcShell.setInv(30);
+            gbcShell.setPrice(45.0);
+            gbcShell.setId(400L);
             partRepository.save(gbcShell);
+
+            InhousePart usbcCharger = new InhousePart();
+            usbcCharger.setName("USB-C Charger");
+            usbcCharger.setInv(20);
+            usbcCharger.setPrice(20.0);
+            usbcCharger.setId(500L);
             partRepository.save(usbcCharger);
+
+            List<OutsourcedPart> outsourcedParts = (List<OutsourcedPart>) outsourcedPartRepository.findAll();
+            for (OutsourcedPart part : outsourcedParts) {
+                System.out.println(part.getName() + " " + part.getCompanyName());
+            }
+
 
 
             //5 Products instantiated using constructors

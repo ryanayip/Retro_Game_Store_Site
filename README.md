@@ -40,8 +40,8 @@ Lines: 20-22
 Added constructor to simplify future object instantiation.
 
 File Path: src/main/java/com/example/demo/bootstrap/BootStrapData.java
-Lines 68-96: 
-Instantiated 5 Parts and 5 Products using both existing and newly added constructors. Utilized if/else statement to only
+Lines 48-115:
+Instantiated 5 Parts and 5 Products using both existing constructors and setter methods. Utilized if/else statement to only
 add sample inventory when both the product and part lists are empty.
 
 
